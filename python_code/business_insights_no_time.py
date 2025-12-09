@@ -17,7 +17,7 @@ def connect_to_db():
         conn = psycopg2.connect(**db_params)
         print("Successfully connected to the database")
         return conn
-    except Exception as e:
+    except Exception as e: 
         print(f"Error connecting to database: {e}")
         return None
 

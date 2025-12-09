@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Bike Service Usage</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        canvas {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Monthly Bike Service Usage</h1>
+        <canvas id="monthlyUsageChart" width="800" height="400"></canvas>
+    </div>
+
+    <script>
+        // Sample data - in a real scenario, this would be loaded from the database
+        const monthlyData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [{
+                label: 'Number of Trips',
+                data: [5000, 4500, 6000, 7000, 8500, 10000,
+                       12000, 11000, 9000, 7500, 6500, 5500],
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        // Create the chart
+        const ctx = document.getElementById('monthlyUsageChart').getContext('2d');
+        const monthlyUsageChart = new Chart(ctx, {
+            type: 'bar',
+            data: monthlyData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Monthly Bike Service Usage'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

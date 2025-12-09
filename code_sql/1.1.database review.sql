@@ -22,5 +22,10 @@ SELECT * FROM station_data LIMIT 100;
 SELECT * FROM bike_trips_data LIMIT 100;
 
 
+-- extra table to track the trips times and user characteristics such as genre and so on 
+
+SELECT * FROM trips_time_etc LIMIT 100;
+
+
 
 

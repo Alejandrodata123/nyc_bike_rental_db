@@ -41,3 +41,4 @@ SELECT
   ROUND(AVG(distance_km)::NUMERIC, 3) AS average_trip_distance
 FROM haversine_distances_km;
 
+--
